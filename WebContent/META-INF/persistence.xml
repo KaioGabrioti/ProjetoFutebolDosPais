@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+version="2.0">
+<persistence-unit name="futeboldospais">
+<!-- provedor/implementacao do JPA -->
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+<!-- entidade mapeada -->
+<class>br.com.futeboldospais.model.Usuario</class>
+<class>br.com.futeboldospais.model.Campeonato</class>
+<class>br.com.futeboldospais.model.time</class>
+<class>br.com.futeboldospais.model.Gol</class>
+<class>br.com.futeboldospais.model.Jogador</class>
+
+<properties>
+	<!-- dados da conexao -->
+	<!-- propriedades do hibernate -->
+	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+	<property name="hibernate.show_sql" value="true" />
+	<property name="hibernate.format_sql" value="true" />
+	<!-- atualiza o banco, gera as tabelas se for preciso -->
+	<property name="hibernate.hbm2ddl.auto" value="update" />
+</properties>
+</persistence-unit>
+</persistence>
